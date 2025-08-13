@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khayrah — Heart Soothe (AI-ready UI)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="brand">
+    <div class="logo">🟣 Khayrah <span class="ai">AI</span></div>
+    <div class="subtitle">Qur’an • Hadith • Wise Counsel</div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>How are you feeling right now?</h1>
+      <p class="hint">Pick a feeling, type your own, or tap a quick button. Get verses, hadith, counsel & a pep-talk (with audio).</p>
+
+      <div class="inputs">
+        <label class="field">
+          <span>Choose from list</span>
+          <select id="feeling-select">
+            <option value="">— Select a feeling —</option>
+            <option>sad</option><option>stressed</option><option>worried</option>
+            <option>afraid</option><option>anxious</option><option>hopeless</option>
+            <option>lonely</option><option>angry</option><option>grateful</option>
+            <option>hopeful</option><option>guilty</option><option>overwhelmed</option>
+            <option>tired</option><option>lost</option><option>grieving</option>
+            <option>seeking_patience</option><option>seeking_trust</option>
+          </select>
+        </label>
+
+        <div class="field">
+          <span>Or type your own</span>
+          <div class="text-input">
+            <input id="feeling-input" placeholder="e.g., burnt out, panic, missing someone" />
+            <button id="go-btn" class="primary">Find comfort</button>
+          </div>
+        </div>
+
+        <div class="quick-grid" role="group" aria-label="Quick feelings">
+          <button class="chip" data-feel="sad">😢 Sad</button>
+          <button class="chip" data-feel="stressed">😫 Stressed</button>
+          <button class="chip" data-feel="worried">😧 Worried</button>
+          <button class="chip" data-feel="afraid">😳 Afraid</button>
+          <button class="chip" data-feel="anxious">😟 Anxious</button>
+          <button class="chip" data-feel="grieving">🖤 Grieving</button>
+          <button class="chip" data-feel="angry">😡 Angry</button>
+          <button class="chip" data-feel="hopeful">🌤️ Hopeful</button>
+          <button class="chip" data-feel="grateful">🙏 Grateful</button>
+        </div>
+
+        <div id="ai-status" class="ai-status"></div>
+      </div>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="result-header">
+        <h2 id="result-title">Comfort for <span id="current-feeling"></span></h2>
+        <div class="actions">
+          <button id="speak-all" class="secondary">🔊 Read aloud</button>
+          <button id="stop-speak" class="ghost">⏹️ Stop</button>
+        </div>
+      </div>
+      <div id="ai-peptalk" class="peptalk hidden"></div>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
+
+  <footer class="credits">
+    <span>Made for reflection, not diagnosis. If you’re in crisis, seek local help immediately.</span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
